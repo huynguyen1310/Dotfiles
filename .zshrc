@@ -24,13 +24,13 @@ zplug "supercrabtree/k"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Load theme file ########################################
-zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+#zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 #zplug romkatv/powerlevel10k, as:theme, depth:1
 
 
-
-
-
+#node version manager
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 
 
@@ -47,6 +47,6 @@ zplug load
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# The fuck alias
-eval "$(thefuck --alias)"
-
+#Alias
+alias sail='./vendor/bin/sail'
+eval "$(starship init zsh)"
