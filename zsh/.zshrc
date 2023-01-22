@@ -19,6 +19,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "jeffreytse/zsh-vi-mode"
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
+#Z file
+. ~/z.sh
 
 #node version manager
 export NVM_DIR=~/.nvm
