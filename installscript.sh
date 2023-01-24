@@ -93,10 +93,18 @@ echo '------------'
 brew install tmux
 stow tmux
 
+echo 'Install starship'
+echo '------------'
+brew install starship
+
 echo 'Install alacritty'
 echo '------------'
 brew install --cask alacritty
 stow alacritty
+
+echo 'Install lazygit'
+echo '------------'
+brew install lazygit
 
 #Copy Font
 cp ~/Dotfiles/fonts/FiraCode/*.ttf ~/Library/Fonts

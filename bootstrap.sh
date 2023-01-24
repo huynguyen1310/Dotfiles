@@ -4,7 +4,7 @@
 
 function bootstrapTerminal() {	
 	sudo -v #ask password beforehand
-	source ~/Dotfiles/installscript
+	source ~/Dotfiles/installscript.sh
 }
 
 
