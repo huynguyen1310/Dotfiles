@@ -9,17 +9,11 @@ echo install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Install git 
-echo 'Install git'
-echo '-----------------'
-brew install git
-
+ 
 # Install stow 
 echo 'Install stow'
 echo '-----------------'
 brew install stow
-
 
 # Install zsh
 echo 'Install zsh'
