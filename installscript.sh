@@ -74,7 +74,7 @@ echo '------------'
 brew install yarn
 
 # Activate z
-cd ~/Dotfiles
+cd ~/Dotfiles/z
 chmod +x z.sh
 
 echo 'Install nvim'
