@@ -88,6 +88,11 @@ echo 'Install takeout'
 echo '------------'
 composer global require tightenco/takeout
 
+echo 'Install tmux'
+echo '------------'
+brew install tmux
+stow tmux
+
 #Copy Font
 cp ~/Dotfiles/fonts/FiraCode/*.ttf ~/Library/Fonts
 
