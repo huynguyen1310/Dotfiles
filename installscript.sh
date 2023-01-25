@@ -49,7 +49,7 @@ brew install composer
 echo 'Install laravel valet'
 echo '---------------------'
 composer global require laravel/valet
-valet install
+~/.composer/vendor/bin/valet install
 
 echo 'Install yarn'
 echo '------------'
