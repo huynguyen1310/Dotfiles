@@ -122,6 +122,19 @@ echo 'Install docker-compose'
 echo '------------'
 brew install docker-compose
 
+
+echo 'Install sourcetree'
+echo '------------'
+brew install --cask sourcetree
+
+echo 'Install brave-browser'
+echo '------------'
+brew install --cask brave-browser
+
+echo 'Install dbgate'
+echo '------------'
+brew install --cask dbgate
+
 #Copy Font
 cp ~/Dotfiles/fonts/FiraCode/*.ttf ~/Library/Fonts
 
