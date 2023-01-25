@@ -106,6 +106,34 @@ echo 'Install lazygit'
 echo '------------'
 brew install lazygit
 
+echo 'Install hiddenbar'
+echo '------------'
+brew install --cask hiddenbar
+
+echo 'Install rectangle'
+echo '------------'
+brew install --cask rectangle
+
+echo 'Install insomnia'
+echo '------------'
+brew install --cask insomnia
+
+echo 'Install rapidapi'
+echo '------------'
+brew install --cask rapidapi
+
+echo 'Install httpie'
+echo '------------'
+brew install httpie
+
+echo 'Install docker'
+echo '------------'
+brew install docker
+
+echo 'Install docker-compose'
+echo '------------'
+brew install docker-compose
+
 #Copy Font
 cp ~/Dotfiles/fonts/FiraCode/*.ttf ~/Library/Fonts
 
