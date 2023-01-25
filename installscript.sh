@@ -44,19 +44,7 @@ brew link --overwrite --force php@8.1
 
 echo 'Install composer'
 echo '----------------'
-EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
-if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
-then
-    >&2 echo 'ERROR: Invalid installer checksum'
-    rm composer-setup.php
-    exit 1
-fi
-php composer-setup.php
-rm composer-setup.php
-sudo mkdir /usr/local/bin/
-sudo mv composer.phar /usr/local/bin/composer
+brew install composer
 
 echo 'Install laravel valet'
 echo '---------------------'

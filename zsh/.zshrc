@@ -55,6 +55,11 @@ alias tn='tmux new-session'
 # Lists all ongoing sessions
 alias tl='tmux list-sessions'
 
+alias ls='ls -a'
+alias c='clear'
+alias edit='nvim ~/.zshrc'
+alias reload='source ~/.zshrc'
 
+export PATH=~/.composer/vendor/bin:$PATH
 
 eval "$(starship init zsh)"
