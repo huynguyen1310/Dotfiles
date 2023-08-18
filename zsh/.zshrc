@@ -55,7 +55,8 @@ alias tn='tmux new-session'
 # Lists all ongoing sessions
 alias tl='tmux list-sessions'
 
-alias ls='ls -a'
+alias ls='ls -a --color=auto'
+alias ll= 'ls -al --color=auto'
 alias c='clear'
 alias edit='nvim ~/.zshrc'
 alias reload='source ~/.zshrc'
