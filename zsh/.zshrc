@@ -16,12 +16,6 @@ zplug "b4b4r07/enhancd", use:init.sh
 # (If the defer tag is given 2 or above, run after compinit command)
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-zplug "jeffreytse/zsh-vi-mode"
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-
-#Z file
-. ~/z.sh
-
 #node version manager
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
@@ -39,10 +33,12 @@ zplug load
 
 #Alias
 alias sail='./vendor/bin/sail'
- 
+alias pa='php artisan'
+
 # Some tmux-related shell aliases
 # Attaches tmux to the last session; creates a new session if none exists.
 alias t='tmux attach || tmux new-session'
+alias tn="tmux new -s (pwd | sed 's/.*\///g')"
 
 # Attaches tmux to a session (example: ta portal)
 alias ta='tmux attach -t'
@@ -64,3 +60,4 @@ alias reload='source ~/.zshrc'
 export PATH=~/.composer/vendor/bin:$PATH
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
