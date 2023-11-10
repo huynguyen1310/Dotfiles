@@ -1,32 +1,32 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
---
-local wk = require("which-key")
-wk.register(mappings, opts)
+-- [[ Basic Keymaps ]]
 
-wk.register({
-  ["<leader>h"] = {
-    name = "+harpoon",
-    a = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add to harpoon" },
-    e = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon navigation" },
-  },
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
 })
 
--- local function map(mode, lhs, rhs, opts)
---   local keys = require("lazy.core.handler").handlers.keys
---   ---@cast keys LazyKeysHandler
---   -- do not create the keymap if a lazy keys handler exists
---   if not keys.active[keys.parse({ lhs, mode = mode }).id] then
---     opts = opts or {}
---     opts.silent = opts.silent ~= false
---     if opts.remap and not vim.g.vscode then
---       opts.remap = nil
---     end
---     vim.keymap.set(mode, lhs, rhs, opts)
---   end
--- end
---
--- --Harpoon
--- map("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>", { desc = "Add file to harpoon" })
--- map("n", "<leader>he", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Toggle harpoon menu" })
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>e', '<CMD>Neotree filesystem left toggle dir=./<CR>')
+
+vim.keymap.set('n', '<leader>bn', vim.cmd.bnext, { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>bp', vim.cmd.bprevious, { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>bc', vim.cmd.bdelete, { desc = 'Close buffer' })
+
