@@ -26,7 +26,12 @@ vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 vim.keymap.set('n', '<leader>e', '<CMD>Neotree filesystem left toggle dir=./<CR>')
 
-vim.keymap.set('n', '<leader>bn', vim.cmd.bnext, { desc = 'Next buffer' })
-vim.keymap.set('n', '<leader>bp', vim.cmd.bprevious, { desc = 'Previous buffer' })
-vim.keymap.set('n', '<leader>bc', vim.cmd.bdelete, { desc = 'Close buffer' })
-
+-- Harpoon
+vim.keymap.set('n', '<leader>ha', '<CMD>lua require("harpoon.mark").add_file()<CR>', { desc = 'Harpoon add file' })
+vim.keymap.set('n', '<leader>hh', '<CMD>lua require("harpoon.ui").toggle_quick_menu()<CR>', { desc = 'Harpoon menu' })
+vim.keymap.set('n', '<leader>hn', '<CMD>lua require("harpoon.ui").nav_next()<CR>', { desc = 'Harpoon next mark' })
+vim.keymap.set('n', '<leader>hp', '<CMD>lua require("harpoon.ui").nav_prev()<CR>', { desc = 'Harpoon previous mark' })
+vim.keymap.set('n', '<leader>h1', '<CMD>lua require("harpoon.ui").nav_file(1)<CR>', { desc = 'Harpoon file 1' })
+vim.keymap.set('n', '<leader>h2', '<CMD>lua require("harpoon.ui").nav_file(2)<CR>', { desc = 'Harpoon file 2' })
+vim.keymap.set('n', '<leader>h3', '<CMD>lua require("harpoon.ui").nav_file(3)<CR>', { desc = 'Harpoon file 3' })
+vim.keymap.set('n', '<leader>h4', '<CMD>lua require("harpoon.ui").nav_file(4)<CR>', { desc = 'Harpoon file 4' })
