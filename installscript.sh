@@ -135,6 +135,8 @@ echo 'Install dbgate'
 echo '------------'
 brew install --cask dbgate
 
+brew install zoxide
+
 #Copy Font
 cp ~/Dotfiles/fonts/FiraCode/*.ttf ~/Library/Fonts
 
