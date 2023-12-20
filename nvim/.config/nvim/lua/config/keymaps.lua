@@ -35,3 +35,6 @@ vim.keymap.set('n', '<leader>h1', '<CMD>lua require("harpoon.ui").nav_file(1)<CR
 vim.keymap.set('n', '<leader>h2', '<CMD>lua require("harpoon.ui").nav_file(2)<CR>', { desc = 'Harpoon file 2' })
 vim.keymap.set('n', '<leader>h3', '<CMD>lua require("harpoon.ui").nav_file(3)<CR>', { desc = 'Harpoon file 3' })
 vim.keymap.set('n', '<leader>h4', '<CMD>lua require("harpoon.ui").nav_file(4)<CR>', { desc = 'Harpoon file 4' })
+
+-- Oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
